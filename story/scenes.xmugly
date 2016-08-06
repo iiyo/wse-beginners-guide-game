@@ -1,0 +1,129 @@
+. scene #start :
+    
+    . trigger name next_on_right, action activate
+    . trigger name next_on_space, action activate
+    
+    . set @ambience, track harbour
+    . move @tourist, x 50%, xAnchor 50%, y 50%, yAnchor 50%, :0
+    . set @background, image sky
+    . show @background
+    . play @ambience
+    
+    . show @tb_main
+    
+    (( n: Such a nice day... ))
+    (( n: The sun seemed to be smiling as it's rays gently warmed my body. ))
+    (( n : Lying on my back on the peer, I was looking up at a beautiful sky. ))
+    (( n: The sounds of seagulls. Waves crashing against my trusty old boat. ))
+    (( n: I caught a lot of fish today. Enough for maybe two days. ))
+    (( n: Having done all the work for the day, I could just relax the rest of it.
+        Could life be any more fulfilling than that? ))
+    
+    . hide @background
+    
+    (( n: I took a deep breath and closed my eyes. ))
+    (( n: *Click!* ))
+    (( n: Huh? ))
+    (( n: *Click!* *Click!* ))
+    (( n: What the... what is this sound? ))
+    (( n: *Click!* ))
+    
+    . show @background
+    
+    (( n: Annoyed I opened my eyes. ))
+    (( n: It seemed one of those damn rich tourists was taking photographs of god knows what. ))
+    (( n: Stuff that obviously only tourists would be interested in.
+          Stones lying around and crap like that. ))
+    (( n: Although he wore typical tourist clothes, I'd bet my ass that he was some kind of
+          businessman in his day-to-day life. ))
+    (( n: I could totally imagine him wearing an expensive black suit and one of those
+          slave leashes around his neck, which city people seem to be so fond of. ))
+    (( n: After taking a photo of my boat, he finally noticed me and waved. ))
+    (( n: I turned my head and ignored him. He didn't get the message, obviously,
+          as he approached me further. ))
+    
+    . set @tourist, image sunglasses, :0
+    . show @tourist
+    
+    (( t: Hello there! I didn't notice you at all before. Did I wake you? Well, sorry about that,
+          hahaha! ))
+    
+    . set @tourist, image happy
+    
+    (( n: He took off his sunglasses. I could tell that he was much younger than me.
+          15, maybe 20 years. ))
+    (( f: ... ))
+    (( t: So.. what are you doing here in the middle of the day? ))
+    (( f: ... ))
+    (( t: Not working? Why not? Are you sick? ))
+    (( n: That annoying little pest just didn't stop bugging me. So I thought it would
+          be a good idea to... ))
+    
+    . choice :
+        . option label "... get angry at him.", scene angry
+        . option label "... answer him.", scene answer
+    --
+--
+
+. scene #angry :
+    
+    . set @tourist, image shocked, :200
+    
+    (( f: Can you please SHUT UP and leave me the f*** alone?
+          What the heck do you think I'm doing here, huh? ))
+    (( t: Well, I... ))
+    (( f: Can't you see I'm trying to sleep here? Do you have eyes in that head of yours? ))
+    
+    . set @tourist, image calm, :200
+    
+    (( f: Really now, can't you goddamn tourists not just go fall off a cliff or something? ))
+    (( t: I.. I'm so sorry... ))
+    
+    . hide @tourist
+    
+    (( n: He left in a hurry. Well, good for him. God knows what I'd do to someone
+          as annoying as him. ))
+    
+    . restart
+--
+
+. scene #answer :
+    
+    (( f: ...no. ))
+    (( t: Pardon? I didn't quite catch that? ))
+    (( f: No. I'm alright. ))
+    (( t: Ah, I see... so why don't you go fishing then? I mean, it's such a nice wheather. ))
+    (( f: ... ))
+    (( t: Aren't these perfect conditions for catching some more fish? ))
+    (( t: I mean... don't you want to take that opportunity? ))
+    (( t: Just think about it for a moment. If you would go fishing not once but... say twice.
+          No, maybe even three times a day? ))
+    (( t: In no time, you'd be able to get a motor for that boat of yours. ))
+    (( f: ... ))
+    (( t: And then... let's say a year from now, you could just buy a better boat. You'd be able
+          to catch so much more fish like that. ))
+    (( t: Oh, I know! Then you could start your own fishing company. You'd hire some men,
+          buy some more boats... ))
+    (( t: And before you could even blink you'd be the big boss. ))
+    (( t: You'd be so rich then... ))
+    (( f: ... ))
+    (( f: And then? What? ))
+    (( t: Well, you'd be a made man. You could laze around the coast all day.
+          What a life that'd be, huh? ))
+    (( f: Well, I hate to bring the shocking news to you, but you know...
+          I'm already doing that right now. ))
+    
+    . set @tourist, image calm
+    
+    (( t: ... ))
+    (( f: ... ))
+    
+    . hide @tourist
+    
+    (( n: That rendered him speechless. He looked like I told him that his way of life
+          was pointless. A total and utter failure. Like he was some dumb idiot and no one
+          ever told him what life was all about. ))
+    (( n: And maybe... I really did that. ))
+    
+    . restart
+--

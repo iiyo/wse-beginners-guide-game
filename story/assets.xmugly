@@ -1,0 +1,37 @@
+
+. imagepack name tourist, width 332px, height 360px, x 50%, xAnchor 50%, y 50%, yAnchor 50%, z 20 :
+    . image src assets/images/tourist_angry.png, name angry
+    . image src assets/images/tourist_calm.png, name calm
+    . image src assets/images/tourist_happy.png, name happy
+    . image src assets/images/tourist_shocked.png, name shocked
+    . image src assets/images/tourist_sunglasses.png, name sunglasses
+--
+
+. background name background, src assets/images/Evening_clouds_C_01.jpg
+
+. character name f, textbox tb_main :
+    . displayname :
+        Fisher
+    --
+--
+
+. character name t, textbox tb_main :
+    . displayname :
+        Tourist
+    --
+--
+
+. character name n, textbox tb_main
+
+. textbox name tb_main, width 1326px, height 90px, x 50%, xAnchor 50%, y 96%, yAnchor 100%, +namebox, speed 50 :
+    . nameTemplate :
+        {name}
+    --
+--
+
+. audio name ambience, +loop, +fade :
+    . track title harbour :
+        . source href assets/audio/harbour.ogg, type ogg
+        . source href assets/audio/harbour.mp3, type mp3
+    --
+--
